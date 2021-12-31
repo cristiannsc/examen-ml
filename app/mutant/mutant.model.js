@@ -16,9 +16,9 @@ module.exports = class MutantModel {
      */
     static async isMutant(dna) {
         const dnaChecker = new DnaChecker(dna)
-        await dnaChecker.checkDna()
-        let result = await dnaChecker.checkDiagonals()
         logger.info('Función isMutant: ' + dnaChecker.isMutant)
+        await dnaChecker.checkDna()
+        return dnaChecker.isMutant
     }
 
 

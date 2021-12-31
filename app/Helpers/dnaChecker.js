@@ -102,7 +102,7 @@ module.exports = class DnaChecker {
     }
 
     async checkDna() {
-        this.isMutant = await this.checkArray() || await this.checkVertical() ? true : false
+        this.isMutant = await this.checkArray() || await this.checkVertical() || await this.checkDiagonals ? true : false
     }
 
 

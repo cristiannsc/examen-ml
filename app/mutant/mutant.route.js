@@ -3,11 +3,11 @@ const logger = require('../../config/logger');
 const router = express.Router();
 
 const { isMutant } = require('./mutant.controller');
+const { ValidateBody } = require('./mutant.validate')
 
-
-router.post('/', async (req, res, next) => {
+router.post('/', [ValidateBody], async (req, res, next) => {
     try {
-        return res.status(200).send(await isMutant(req.body));
+        await isMutant(req.body) ? res.status(200).json({ isMutant: true }) : res.status(403).json({ isMutant: false })
     } catch (error) {
         next(error)
     }
