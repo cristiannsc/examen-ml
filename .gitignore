@@ -1,0 +1,23 @@
+# Node modules
+node_modules
+
+# Adonis directory for storing tmp files
+tmp
+
+# Environment variables, never commit this file
+.env
+
+# The development sqlite file
+database/*.sqlite
+
+# VS Code Debbuger
+.vscode
+
+# credenciales
+credentials
+
+# Coverage
+coverage
+.nyc_output
+
+logs
