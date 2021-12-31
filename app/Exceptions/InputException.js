@@ -1,3 +1,5 @@
+const CONSTANTS = require('../Helpers/constant')
+
 module.exports = class InputException extends Error {
 
     constructor(message, status, summary, code){
@@ -5,7 +7,7 @@ module.exports = class InputException extends Error {
         this.summary = summary;
         this.message = message;
         this.status = status;
-        this.code = code || 'E_INPUT'
+        this.code = code || CONSTANTS.ERROR_CODES.INPUT.DEFAULT
     }
 
 }

@@ -1,4 +1,3 @@
-const logger = require('../../config/logger');
 const MutantModel = require('./mutant.model');
 
 const Controller = {

@@ -5,16 +5,16 @@ const glob = require('glob');
 
 const logger = require('../config/logger');
 
-const matches = glob.sync(path.join(global.appRoot, 'app/*/*.route.js'));
+const matches = glob.sync(path.join(global.appRoot, 'app/resources/*/*.route.js'));
 
 const routerV1 = express.Router();
 
 routerV1.get('/v1', (req, res) => {
-  res.status(200).send({ message: "Servicio ejecutado con exito", status: "OK" });
+  res.status(200).send({ message: "Servicio ejecutado exitosamente", status: "OK" });
 });
 
 routerV1.head('/', (req, res) => {
-  res.status(200).send('MUTANT-DETECTOR V1');
+  res.status(200).send('EXAMEN-ML-DETECTOR-MUTANTES V1');
 });
 
 

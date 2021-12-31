@@ -1,16 +1,16 @@
 const logger = require('./logger');
-const DEFAULT_CODE = 'E_DEFAULT'
+const CONSTANTS = require('../app/Helpers/constant')
 
 exports.handlerErrors = (err, req, res, next) => {
     logger.error(`Error al ejecutar el servicio
     Summary: ${err.summary || 'Sin Resumen'}
     Message: ${err.message}
-    CODE: ${err.code || DEFAULT_CODE}
+    CODE: ${err.code || CONSTANTS.ERROR_CODES.DEFAULT}
     Stack: ${err.stack}`);
     res.status(err.status || 500);
     res.send({
         status: 'ERROR',
-        code: err.code || DEFAULT_CODE,
+        code: err.code || CONSTANTS.ERROR_CODES.DEFAULT,
         message: err.message
     });
 };

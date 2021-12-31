@@ -1,5 +1,5 @@
 const logger = require('../../config/logger');
-const MUTANT_PATTERN = ['AAAA', 'TTTT', 'CCCC', 'GGGG']
+const CONSTANTS = require('../Helpers/constant')
 module.exports = class DnaChecker {
     constructor(data) {
         this.dataDna = data
@@ -24,12 +24,12 @@ module.exports = class DnaChecker {
      */
     async checkArray() {
         this.dataDna.map((row) => {
-            for (const pattern of MUTANT_PATTERN) {
+            for (const pattern of CONSTANTS.MUTANT_PATTERN) {
                 row.includes(pattern) ? this.mutantFactor++ : this.mutantFactor
             }
         })
         console.log('mutant factor: ', this.mutantFactor)
-        return this.mutantFactor >= 2
+        return this.mutantFactor >= CONSTANTS.MIN_MUTANT_FACTOR
     }
 
     /**
@@ -46,7 +46,7 @@ module.exports = class DnaChecker {
             transposedDataDNA.push(newRow)
         }
         await this.checkArray(transposedDataDNA)
-        return this.mutantFactor >= 2
+        return this.mutantFactor >= CONSTANTS.MIN_MUTANT_FACTOR
     }
 
     /**
@@ -95,14 +95,14 @@ module.exports = class DnaChecker {
         logger.info(JSON.stringify(rlDiagonals))
 
         // Se concatenan ambos arrays y se filtran solo las diagonales que cuentan con más de 4 letras
-        let result = lrDiagonals.concat(rlDiagonals).filter(row => row.length >= 4)
+        let result = lrDiagonals.concat(rlDiagonals).filter(row => row.length >= CONSTANTS.MIN_LENGTH_MUTANT_ADN)
         logger.info(JSON.stringify(result))
         await this.checkArray(result)
-        return this.mutantFactor >= 2
+        return this.mutantFactor >= CONSTANTS.MIN_MUTANT_FACTOR
     }
 
     async checkDna() {
-        this.isMutant = await this.checkArray() || await this.checkVertical() || await this.checkDiagonals ? true : false
+        this.isMutant = await this.checkArray() || await this.checkVertical() || await this.checkDiagonals() ? true : false
     }
 
 
