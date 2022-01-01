@@ -3,7 +3,7 @@ const { db } = require('../../../config/database');
 const logger = require('../../../config/logger');
 const CONSTANTS = require('../../Helpers/constant');
 const DnaChecker = require('../../Helpers/dnaChecker')
-const DatabaseException = require('../../Exceptions/DatabaseException');
+const DatabaseException = require('../../Exceptions/databaseException');
 
 /**
  * Restricciones a crear:
@@ -40,15 +40,5 @@ module.exports = class MutantModel {
             throw new DatabaseException('No se pudo crear el registro de la secuencia de ADN entregada', 400, CONSTANTS.ERROR_CODES.DATABASE.CREATE)
         }
     }
-
-    static async getStats() {
-        try {
-            return await db.one('SELECT count(mutant = true or null) as count_mutant_dna, count(mutant = false or null) as count_human_dna, round(count_mutant_dna * 1.0 /  count_human_dna * 1.0, 2) as ratio from diagnostics');
-        } catch (error) {
-            logger.error(error.message)
-            throw new DatabaseException('Error al realizar el calculo de las estadísticas', 400, CONSTANTS.ERROR_CODES.DATABASE.STATS)
-        }
-    }
-
 
 }

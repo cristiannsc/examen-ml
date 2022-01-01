@@ -18,6 +18,11 @@ const MESSAGES = {
     RESPONSE: {
         MUTANT: 'DNA entregado corresponde a un mutante!',
         NON_MUTANT: 'DNA entregado corresponde a un humano :('
+    },
+    TEST:{
+        ERROR_SAVE_DB: 'Test con error en registro BD',
+        ERROR_STATS_DB: 'Test con error en obtencion de stats desde BD',
+        NO_VALID_BODY: 'No soy el objeto esperado'
     }
 }
 const MUTANT_PATTERN = ['AAAA', 'TTTT', 'CCCC', 'GGGG']

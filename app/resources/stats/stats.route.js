@@ -5,7 +5,8 @@ const { getStats } = require('./stats.controller');
 
 router.get('/', async (req, res, next) => {
     try {
-        res.status(200).json(await getStats())
+        let result = await getStats()
+        res.status(200).json(result)
     } catch (error) {
         next(error)
     }

@@ -5,14 +5,21 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "nodemon server.js"
   },
-  "author": "Cristian Sepúlveda Cabas.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiannsc/examen-ml.git"
+  },
+  "author": "Paul Knight G.",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristiannsc/examen-ml/issues"
+  },
+  "homepage": "https://github.com/cristiannsc/examen-ml#readme",
   "dependencies": {
     "bluebird": "^3.7.2",
-    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -22,6 +29,8 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }

@@ -4,7 +4,7 @@ module.exports = class DnaChecker {
     constructor(data) {
         this.dataDna = data
         this.rowQty = data.length
-        this.matrix = data ? this.dataDna.map(row => row.split("")) : []
+        this.matrix = this.dataDna.map(row => row.split(""))
         this.mutantFactor = 0
         this.isMutant = null
     }

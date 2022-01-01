@@ -1,4 +1,4 @@
-const InputException = require('../../Exceptions/InputException')
+const InputException = require('../../Exceptions/inputException')
 const CONSTANTS = require('../../Helpers/constant')
 
 checkBody = (body) => {

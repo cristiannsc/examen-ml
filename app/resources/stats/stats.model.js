@@ -1,7 +1,7 @@
 const { db } = require('../../../config/database');
 const logger = require('../../../config/logger');
 const CONSTANTS = require('../../Helpers/constant');
-const DatabaseException = require('../../Exceptions/DatabaseException');
+const DatabaseException = require('../../Exceptions/databaseException');
 
 /**
  * Restricciones a crear:

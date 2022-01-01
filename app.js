@@ -37,6 +37,4 @@ app.use((req, res) => {
     return res.status(404).send({ status: 'ERROR', message: 'Página no encontrada' })
 })
 
-
-
 module.exports = app;
