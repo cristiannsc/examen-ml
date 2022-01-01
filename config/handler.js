@@ -1,5 +1,5 @@
 const logger = require('./logger');
-const CONSTANTS = require('../app/Helpers/constant')
+const CONSTANTS = require('../app/helpers/constant')
 
 exports.handlerErrors = (err, req, res, next) => {
     logger.error(`Error al ejecutar el servicio

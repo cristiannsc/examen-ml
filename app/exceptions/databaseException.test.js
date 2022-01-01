@@ -1,4 +1,4 @@
-const CONSTANTS = require('../Helpers/constant');
+const CONSTANTS = require('../helpers/constant');
 const DatabaseException = require('./databaseException');
 
 jest.setTimeout(300000)

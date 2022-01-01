@@ -1,5 +1,5 @@
 const logger = require('../../config/logger');
-const CONSTANTS = require('../Helpers/constant')
+const CONSTANTS = require('../helpers/constant')
 module.exports = class DnaChecker {
     constructor(data) {
         this.dataDna = data

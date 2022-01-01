@@ -1,5 +1,5 @@
 const request = require('supertest');
-const CONSTANTS = require('../../Helpers/constant');
+const CONSTANTS = require('../../helpers/constant');
 const { app } = require('../../../jest-server');
 
 let mockOne;

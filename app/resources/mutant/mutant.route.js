@@ -1,4 +1,4 @@
-const CONSTANTS = require('../../Helpers/constant')
+const CONSTANTS = require('../../helpers/constant')
 const express = require('express');
 const router = express.Router();
 

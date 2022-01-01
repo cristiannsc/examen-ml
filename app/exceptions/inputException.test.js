@@ -1,4 +1,4 @@
-const CONSTANTS = require('../Helpers/constant');
+const CONSTANTS = require('../helpers/constant');
 const InputException = require('./inputException');
 
 jest.setTimeout(300000)

@@ -1,4 +1,4 @@
-const CONSTANTS = require('../Helpers/constant')
+const CONSTANTS = require('../helpers/constant')
 
 module.exports = class InputException extends Error {
 
