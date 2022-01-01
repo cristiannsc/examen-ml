@@ -1,7 +1,7 @@
 const logger = require('./logger');
 const CONSTANTS = require('../app/helpers/constant')
 
-exports.handlerErrors = (err, req, res, next) => {
+exports.errorHandler = (err, req, res, next) => {
     logger.error(`Error al ejecutar el servicio
     Summary: ${err.summary || 'Sin Resumen'}
     Message: ${err.message}

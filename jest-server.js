@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const logger = require('./config/logger');
 const routes = require('./config/routes');
-const { handlerErrors } = require('./config/handler');
+const { errorHandler } = require('./config/handler');
 
 logger.info('Starting server...');
 
@@ -30,7 +30,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api', routes.v1);
-app.use(handlerErrors);
+app.use(errorHandler);
 
 // Ruta por defecto para páginas no encontradas
 app.use((req, res) => {
